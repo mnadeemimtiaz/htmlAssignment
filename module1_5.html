@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Root Calculator</title>
+</head>
+<body>
+
+<script>
+  function calc() {
+    var calculateSQ = confirm("Should I calculate the square root?");
+
+    if (calculateSQ) {
+      var userNumberInput = prompt("Enter a number:");
+
+      if (userNumberInput !== null) {
+        var inputNumber = parseFloat(userNumberInput);
+
+        if (!isNaN(inputNumber) && inputNumber >= 0) {
+          var resultSquareRoot = Math.sqrt(inputNumber);
+          document.body.innerHTML += "<p>The square root of " + inputNumber + " is: " + resultSquareRoot + "</p>";
+        } else {
+          document.body.innerHTML += "<p>The square root of a negative number is not defined.</p>";
+        }
+      }
+    } else {
+      document.body.innerHTML += "<p>The square root is not calculated.</p>";
+    }
+  }
+
+  calc();
+</script>
+
+</body>
+</html>
