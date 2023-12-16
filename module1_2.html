@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeting Program</title>
+  <script>
+    function generateGreeting() {
+      var user_input = prompt('Type your name.');
+
+      if (user_input !== null && user_input !== "") {
+        var welcomeMessage = "Hello, " + user_input + "! Welcome!";
+        document.getElementById("outputMessage").innerHTML = welcomeMessage;
+      } else {
+        alert("You didn't enter a name. Please try again.");
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Welcome to the Greeting Program</h1>
+  
+  <p id="outputMessage"></p>
+
+  <button onclick="generateGreeting()">Greet Me</button>
+
+</body>
+</html>
