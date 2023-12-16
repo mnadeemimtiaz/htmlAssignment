@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Operations</title>
+  <script>
+    function calculateAndDisplay() {
+      var a = prompt("Enter the first integer:");
+      var b = prompt("Enter the second integer:");
+      var c = prompt("Enter the third integer:");
+
+      a = parseFloat(a);
+      b = parseFloat(b);
+      c = parseFloat(c);
+
+      var sum = a + b + c;
+      var product = a * b * c;
+      var average = sum / 3;
+
+      document.getElementById("result").innerHTML =
+        "Sum: " + sum + "<br>" +
+        "Product: " + product + "<br>" +
+        "Average: " + average.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <h1>Math Operations</h1>
+  <button onclick="calculateAndDisplay()">Calculate</button>
+  <div id="result"></div>
+</body>
+</html>
