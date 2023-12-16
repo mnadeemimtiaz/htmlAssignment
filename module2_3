@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Sorting</title>
+</head>
+<body>
+
+<script>
+    const inputNumbers = () => {
+        let numbers = [];
+        while (true) {
+            let input = prompt("Enter a number (enter 0 to stop):");
+            let number = parseFloat(input);
+            if (isNaN(number)) continue;
+            if (number === 0) break;
+            numbers.push(number);
+        }
+        return numbers;
+    };
+
+    const displaySortedNumbers = numbers => {
+        console.log("Sorted numbers (from largest to smallest):", numbers.sort((a, b) => b - a));
+    };
+
+    const userNumbers = inputNumbers();
+    displaySortedNumbers(userNumbers);
+</script>
+
+</body>
+</html>
