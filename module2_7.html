@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dice Roll</title>
+</head>
+<body>
+
+    <h1>Custom Dice Roll</h1>
+
+    <script>
+        function diceRoll(maxNumber) {
+            var resultsListElement = document.getElementById('diceRollResults');
+            var currentRoll;
+
+            do {
+                currentRoll = getDiceRoll(maxNumber);
+                var listItemElement = document.createElement('li');
+                listItemElement.textContent = 'Dice Roll Result: ' + currentRoll;
+                resultsListElement.appendChild(listItemElement);
+            } while (currentRoll !== maxNumber);
+        }
+
+        function getDiceRoll(maxNumber) {
+            return Math.floor(Math.random() * maxNumber) + 1;
+        }
+
+        var maxNumber = parseInt(prompt("Enter the maximum number on the dice:"));
+        diceRoll(maxNumber);
+    </script>
+
+</body>
+</html>
