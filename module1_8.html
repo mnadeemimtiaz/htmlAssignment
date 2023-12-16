@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leap Year Finder</title>
+  <script>
+    function yearprint(leapYears) {
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = "<ul>";
+      leapYears.forEach(function(year) {
+        resultElement.innerHTML += "<li>" + year + "</li>";
+      });
+      resultElement.innerHTML += "</ul>";
+    }
+
+    function LP_year() {
+      var startYear = parseInt(prompt("Enter the start year:"));
+      var endYear = parseInt(prompt("Enter the end year:"));
+
+      if (isNaN(startYear) || isNaN(endYear) || startYear > endYear) {
+        alert("Please enter valid years with the start year less than or equal to the end year.");
+        return;
+      }
+
+      var leapYears = [];
+      for (var year = startYear; year <= endYear; year++) {
+        if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+          leapYears.push(year);
+        }
+      }
+
+      yearprint(leapYears);
+    }
+  </script>
+</head>
+<body>
+  <h1>Leap Year Finder</h1>
+  <div id="result"></div>
+  <button onclick="LP_year()">Find Leap Years</button>
+</body>
+</html>
