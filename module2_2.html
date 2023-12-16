@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participant Names</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Participant Names</h1>
+
+<script>
+  function get(promptMsg) {
+    return prompt(promptMsg);
+  }
+
+  function getParticipantNames(count) {
+    var names = [];
+    for (var i = 0; i < count; i++) {
+      names.push(get("Enter the name of participant " + (i + 1) + ":"));
+    }
+    return names;
+  }
+
+  function displayNamesAlphabetically(names) {
+    var sortedNames = names.slice().sort();
+    document.write("<h2>Participant Names in Alphabetical Order:</h2><ol>");
+    sortedNames.forEach(name => document.write("<li>" + name + "</li>"));
+    document.write("</ol>");
+  }
+
+  var count = parseInt(get("Enter the number of participants:"), 10);
+  displayNamesAlphabetically(getParticipantNames(count));
+</script>
+
+</body>
+</html>
