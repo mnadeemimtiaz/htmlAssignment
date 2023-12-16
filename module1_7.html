@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roller</title>
+</head>
+<body>
+
+<script>
+  function roll(numDice) {
+    let sum = 0;
+
+    for (let i = 0; i < numDice; i++) {
+      const result = Math.floor(Math.random() * 6) + 1;
+      sum += result;
+    }
+
+    return sum;
+  }
+
+  const numDiceRolls = parseInt(prompt('Enter the number of dice rolls:'));
+
+  if (!isNaN(numDiceRolls) && numDiceRolls > 0) {
+    const totalSum = roll(numDiceRolls);
+    console.log(`Total sum of dice rolls: ${totalSum}`);
+  }
+</script>
+
+</body>
+</html>
