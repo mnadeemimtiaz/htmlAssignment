@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Numbers</title>
+</head>
+<body>
+
+<script>
+  function trackNumbers() {
+    var numbers = [];
+    while (true) {
+      var input = prompt("Enter a number (or type 'exit' to stop):");
+      if (input.toLowerCase() === 'exit') break;
+      var num = parseInt(input);
+      if (!isNaN(num)) {
+        if (numbers.includes(num)) {
+          alert(num + " has already been given. Stopping operation.");
+          break;
+        }
+        numbers.push(num);
+      }
+    }
+    console.log("Entered numbers in ascending order:", numbers.sort((a, b) => a - b));
+  }
+
+  trackNumbers();
+</script>
+
+</body>
+</html>
