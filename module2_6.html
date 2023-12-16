@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dice Roll</title>
+</head>
+<body>
+
+    <h1>Random Dice Roll</h1>
+    <ul id="diceRollResults"></ul>
+
+    <script>
+        function diceRoll() {
+            var resultsListElement = document.getElementById('diceRollResults');
+            var currentRoll;
+
+            do {
+                currentRoll = getDiceRoll();
+                var listItemElement = document.createElement('li');
+                listItemElement.textContent = 'Dice Roll Result: ' + currentRoll;
+                resultsListElement.appendChild(listItemElement);
+            } while (currentRoll !== 6);
+        }
+
+        function getDiceRoll() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+        diceRoll();
+    </script>
+
+</body>
+</html>
